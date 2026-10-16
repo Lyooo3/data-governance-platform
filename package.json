@@ -1,0 +1,40 @@
+{
+  "name": "data-governance-platform",
+  "version": "3.4.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:har": "node scripts/build-from-har.mjs 数据治理",
+    "build:har:file": "node scripts/build-from-har.mjs",
+    "start": "node scripts/platform.mjs start --no-open",
+    "dev": "vite",
+    "api:dev": "node scripts/platform.mjs dev",
+    "build": "vue-tsc --noEmit && vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "db:init": "node scripts/platform.mjs db:init",
+    "db:status": "node scripts/platform.mjs db:status",
+    "db:check": "node scripts/platform.mjs db:check",
+    "db:backup": "node scripts/platform.mjs db:backup",
+    "format": "prettier --write src vite.config.ts tsconfig.json package.json",
+    "validate": "node server.mjs --validate",
+    "start:open": "node scripts/platform.mjs start",
+    "stop": "node scripts/platform.mjs stop",
+    "start:replay": "node server.mjs --replay",
+    "test": "node scripts/platform.mjs test"
+  },
+  "engines": {
+    "node": ">=22.14"
+  },
+  "dependencies": {
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.7",
+    "vue-tsc": "^3.3.13"
+  }
+}
